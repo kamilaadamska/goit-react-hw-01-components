@@ -26,12 +26,13 @@
 .item {
   display: flex;
   flex-direction: column;
-  flex-basis: calc(100% / 4);
+  flex-basis: calc(100% / 5);
   align-items: center;
   gap: 5px;
   border-top: 1px solid #179b81;
   background-color: rgb(247, 220, 111, 0.2);
-  padding: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .item:not(:last-child) {
