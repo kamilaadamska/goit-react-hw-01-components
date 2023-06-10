@@ -7,10 +7,10 @@ export const Statistics = ({ title, stats }) => {
       {title && <h2 className={css.title}>{title}</h2>}
 
       <ul className={css.statList}>
-        {stats.map(({ key, label, percentage }) => {
+        {stats.map(({ id, label, percentage }) => {
           return (
             <li
-              key={key}
+              key={id}
               style={{ backgroundColor: getBgColor(stats.length) }}
               className={css.item}
             >
@@ -26,7 +26,13 @@ export const Statistics = ({ title, stats }) => {
 
 Statistics.propTypes = {
   title: PropTypes.string,
-  stats: PropTypes.arrayOf(PropTypes.object),
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string,
+      percentage: PropTypes.number,
+      id: PropTypes.string,
+    })
+  ),
 };
 
 function getBgColor(max) {
