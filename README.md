@@ -1,4 +1,4 @@
-# React homework template
+# https://kamilaadamska.github.io/goit-react-hw-01-components/
 
 Этот проект был создан при помощи
 [Create React App](https://github.com/facebook/create-react-app). Для знакомства
