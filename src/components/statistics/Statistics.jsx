@@ -9,7 +9,10 @@ export const Statistics = ({ title, stats }) => {
       <ul className={css.statList}>
         {stats.map(({ label, percentage }) => {
           return (
-            <li className={css.item}>
+            <li
+              style={{ backgroundColor: getBgColor(stats.length) }}
+              className={css.item}
+            >
               <span className={css.label}>{label}</span>
               <span className={css.percentage}>{percentage}%</span>
             </li>
@@ -24,3 +27,23 @@ Statistics.propTypes = {
   title: PropTypes.string,
   stats: PropTypes.arrayOf(PropTypes.object),
 };
+
+function getBgColor(max) {
+  const colorIndex = Math.floor(Math.random() * max);
+  switch (colorIndex) {
+    case 0:
+      return '#F7DC6F';
+    case 1:
+      return '#1ABC9C';
+    case 2:
+      return '#DAF7A6';
+    case 3:
+      return '#FFC300';
+    case 4:
+      return '#FF5733';
+    case 5:
+      return '#C70039';
+    default:
+      throw new Error(`The stats have too many elements.`);
+  }
+}
