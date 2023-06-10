@@ -7,9 +7,10 @@ export const Statistics = ({ title, stats }) => {
       {title && <h2 className={css.title}>{title}</h2>}
 
       <ul className={css.statList}>
-        {stats.map(({ label, percentage }) => {
+        {stats.map(({ key, label, percentage }) => {
           return (
             <li
+              key={key}
               style={{ backgroundColor: getBgColor(stats.length) }}
               className={css.item}
             >
