@@ -1,55 +1,32 @@
-.profile {
+.statistics {
   width: 50%;
   border: 1px solid #179b81;
   border-radius: 4px;
-  padding-top: 30px;
+  padding-top: 15px;
   margin: 0 auto;
   box-shadow: 0px 0px 21px 0px rgba(23, 155, 129, 0.75);
   background-color: rgba(218, 247, 166, 0.2);
   margin-bottom: 15px;
 }
 
-.description {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
-
-.avatar {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 5px solid #179b81;
-  background-color: #1abc9c;
-  margin-bottom: 10px;
-}
-
-.name {
-  font-size: 32px;
-  font-weight: 700;
-  color: #292f2e;
-}
-
-.tag {
+.title {
+  text-align: center;
   color: #596663;
-}
-
-.location {
+  text-transform: uppercase;
   font-size: 18px;
-  color: #596663;
-  margin-bottom: 25px;
+  font-weight: 500;
+  margin-bottom: 15px;
 }
 
-.stats {
+.statList {
   list-style-type: none;
   display: flex;
 }
 
-.statBox {
+.item {
   display: flex;
   flex-direction: column;
-  flex-basis: calc(100% / 3);
+  flex-basis: calc(100% / 4);
   align-items: center;
   gap: 5px;
   border-top: 1px solid #179b81;
@@ -57,9 +34,7 @@
   padding: 15px;
 }
 
-.statBoxMiddle {
-  composes: statBox;
-  border-left: 1px solid #179b81;
+.item:not(:last-child) {
   border-right: 1px solid #179b81;
 }
 
@@ -68,7 +43,7 @@
   color: #596663;
 }
 
-.quantity {
+.percentage {
   font-size: 20px;
   font-weight: 700;
   color: #292f2e;
