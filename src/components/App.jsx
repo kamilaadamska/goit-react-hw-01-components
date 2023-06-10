@@ -3,7 +3,7 @@ import user from './profile/user.json';
 
 export const App = () => {
   return (
-    <div>
+    <div class="container">
       <Profile
         username={user.username}
         tag={user.tag}
