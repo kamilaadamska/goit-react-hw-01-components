@@ -13,16 +13,39 @@ export const TransactionHistory = ({ items }) => {
       </thead>
 
       <tbody>
-        {items.map(({ type, amount, currency, id }) => {
+        {items.map(({ type, amount, currency, id }, index) => {
           return (
             <tr key={id}>
-              <td className={css.tableCell}>{type}</td>
-              <td className={css.tableCell}>{amount}</td>
-              <td className={css.tableCell}>{currency}</td>
+              <td
+                className={index % 2 === 0 ? css.tableCell : css.tableCellDark}
+              >
+                {type}
+              </td>
+              <td
+                className={index % 2 === 0 ? css.tableCell : css.tableCellDark}
+              >
+                {amount}
+              </td>
+              <td
+                className={index % 2 === 0 ? css.tableCell : css.tableCellDark}
+              >
+                {currency}
+              </td>
             </tr>
           );
         })}
       </tbody>
     </table>
   );
+};
+
+TransactionHistory.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      type: PropTypes.string,
+      amount: PropTypes.string,
+      currency: PropTypes.string,
+      id: PropTypes.string,
+    })
+  ),
 };

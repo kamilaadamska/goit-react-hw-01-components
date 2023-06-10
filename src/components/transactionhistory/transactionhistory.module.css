@@ -10,7 +10,7 @@
 }
 
 .tableHeader {
-  background-color: #f7dc6f;
+  background-color: #ffc300;
   border: 1px solid #179b81;
   padding-top: 7px;
   padding-bottom: 7px;
@@ -23,4 +23,9 @@
   color: #596663;
   border: 1px solid #179b81;
   font-size: 14px;
+}
+
+.tableCellDark {
+  composes: tableCell;
+  background-color: #daf7a6;
 }
