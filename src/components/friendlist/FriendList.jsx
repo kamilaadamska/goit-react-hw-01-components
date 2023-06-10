@@ -3,16 +3,25 @@ import PropTypes from 'prop-types';
 
 export const FriendList = ({ friends }) => {
   return (
-    <ul className="friend-list">
-      {friends.map(({ avatar, name, isOnline }) => {
+    <ul className={css.friendList}>
+      {friends.map(({ avatar, name, isOnline, id }) => {
         return (
-          <li class="item">
-            <span className={isOnline ? 'online' : 'offline'}></span>
-            <img class="avatar" src={avatar} alt="User avatar" width="48" />
-            <p class="name">{name}</p>
+          <li key={id} className={css.item}>
+            <span className={isOnline ? css.online : css.offline}></span>
+            <img
+              className={css.avatar}
+              src={avatar}
+              alt="User avatar"
+              width="48"
+            />
+            <p className={css.name}>{name}</p>
           </li>
         );
       })}
     </ul>
   );
+};
+
+FriendList.propTypes = {
+  friends: PropTypes.arrayOf(PropTypes.object),
 };
